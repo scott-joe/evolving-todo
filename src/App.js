@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import './style/app.css';
+
+function generateId() {
+  return Math.round(Math.random() * (9999999 - 1000000)) + 1000000;
+}
+
+function List({data}) {
+  return (
+    <ul>
+      {data.map(item => (
+        <li key={item.id}>{item.label}</li>
+      ))}
+    </ul>
+  )
+}
 
 function App() {
+  const [list, setList] = useState([
+    { id: generateId(), label: 'One' },
+    { id: generateId(), label: 'Two' },
+    { id: generateId(), label: 'Three' },
+  ])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header role="heading">ToDos</header>
+      <section>
+        <input />
+        <button>Add</button>
+      </section>
+      <section>
+        <List data={list} />
+      </section>
     </div>
-  );
+  )
 }
 
 export default App;
