@@ -1,37 +1,40 @@
 import React, { useState } from "react";
-import './style/app.css';
-
-function generateId() {
-  return Math.round(Math.random() * (9999999 - 1000000)) + 1000000;
-}
-
-function List({data}) {
-  return (
-    <ul>
-      {data.map(item => (
-        <li key={item.id}>{item.label}</li>
-      ))}
-    </ul>
-  )
-}
+import List from "./components/List"
+import { generateId } from "./utils"
+import './styles/app.css';
 
 function App() {
-  const [list, setList] = useState([
-    { id: generateId(), label: 'One' },
-    { id: generateId(), label: 'Two' },
-    { id: generateId(), label: 'Three' },
-  ])
+  const [list, setList] = useState([])
+  const [inputValue, setInputValue] = useState('')
+
+  const handleChange = e => {
+    setInputValue(e.target.value)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    setList(list => [
+      ...list,
+      {
+        id: generateId(),
+        label: inputValue
+      }
+    ])
+    setInputValue('')
+  }
   
   return (
     <div className="App">
       <header role="heading">ToDos</header>
-      <section>
-        <input />
-        <button>Add</button>
-      </section>
-      <section>
-        <List data={list} />
-      </section>
+      <form onSubmit={handleSubmit} >
+        <input
+          type="text"
+          placeholder="New Todo..."
+          value={inputValue}
+          onChange={handleChange}
+        />
+      </form>
+      <List data={list} />
     </div>
   )
 }
