@@ -11,7 +11,7 @@ function CoreItem({data, complete, onChange, onRemove}) {
           type="checkbox"
           id={`item-${data.id}-complete`}
           name={`item-${data.id}-complete`}
-          complete={complete.toString()}
+          checked={complete}
           onChange={() => onChange({ id: data.id })}
         />
         <label
