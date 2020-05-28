@@ -4,18 +4,12 @@ import Item from './components/Item'
 import { generateId, log } from './utils'
 import './styles/app.css'
 
-// useStorage - custom hook for super powered State
 const useStorage = () => {
-  // initialize to look for localstorage, passing fn to useState declares 1 use
   const initStore = () => JSON.parse(window.localStorage.getItem('list') || "[]")
-  // pass init fn to useState and get back State and SetState
   const [list, setList] = useState(initStore)
-  // call useEffect to establish Side Effect and it's rules
   useEffect(() => {
     window.localStorage.setItem('list', JSON.stringify(list))
-    // setList when list changes
   }, [list])
-  // return State and SetState
   return [list, setList]
 }
 
