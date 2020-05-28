@@ -5,9 +5,10 @@ import App from './App'
 
 afterEach(cleanup)
 
-describe('Initial State', () => {
-  test('App renders heading and list', () => {
+describe('App Component', () => {
+  test('Renders heading and list', () => {
     const { debug } = render(<App />)
     expect(screen.getByRole('heading')).toHaveTextContent('ToDos')
+    expect(screen.getByTestId('list')).toBeInTheDocument()
   })
 })

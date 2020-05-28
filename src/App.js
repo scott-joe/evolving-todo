@@ -1,23 +1,29 @@
-import React, { useState } from "react";
-import List from "./components/List"
-import { generateId } from "./utils"
-import './styles/app.css';
+import React, { useState } from 'react'
+import List from './components/List'
+import Item from './components/Item'
+// import { List, Item } from './components'
+import { generateId } from './utils'
+import './styles/app.css'
 
 function App() {
   const [list, setList] = useState([])
   const [inputValue, setInputValue] = useState('')
 
-  const handleChange = e => {
+  const handleUpdateInput = e => {
     setInputValue(e.target.value)
   }
 
-  const handleSubmit = e => {
+  const handleRemoveItem = ({id}) => {
+    setList(list.filter(item => item.id !== id))
+  }
+
+  const handleSubmitItem = e => {
     e.preventDefault()
     setList(list => [
       ...list,
       {
         id: generateId(),
-        label: inputValue
+        text: inputValue
       }
     ])
     setInputValue('')
@@ -26,15 +32,24 @@ function App() {
   return (
     <div className="App">
       <header role="heading">ToDos</header>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmitItem} >
         <input
           type="text"
           placeholder="New Todo..."
           value={inputValue}
-          onChange={handleChange}
+          onChange={handleUpdateInput}
         />
       </form>
-      <List data={list} />
+      <List>
+        {list.map(item => (
+          <Item
+            key={item.id}
+            data={item}
+            // onChange={handleChangeItem}
+            onRemove={handleRemoveItem}
+          />
+        ))}
+      </List>
     </div>
   )
 }

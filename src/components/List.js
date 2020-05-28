@@ -1,13 +1,10 @@
-import React from "react";
-import Item from "./Item"
-// import '../styles/list.css';
+import React from "react"
+import '../styles/list.css'
 
-export default function List({data}) {
+export default function List({children}) {
   return (
-    <ul data-testid="todo-list">
-      {data.map(item => (
-        <Item key={item.id} text={item.label} />
-      ))}
+    <ul data-testid="list" className="list">
+      {children}
     </ul>
   )
 }
