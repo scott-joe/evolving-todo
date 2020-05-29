@@ -51,4 +51,4 @@ I wanted to try out React Hooks with something from 'the ground up' with CRA and
 - [ ] Docker
 ---------------------------------------------------------------------------
 ## CRA Readme
-_Create React App readme has been moved [here](http://google.com/)_
+_Create React App readme has been moved [here](docs/cra.readme.md)_
