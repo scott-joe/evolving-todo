@@ -1,6 +1,6 @@
 ![Node.js CI](https://github.com/scott-joe/evolving-todo/workflows/Node.js%20CI/badge.svg?branch=master)
 # Evolving ToDo App
-Wanted to try out React Hooks with something from 'the ground up' with CRA and trying out the newer Github features along the way.
+I wanted to try out React Hooks with something from 'the ground up' with CRA and trying out the newer Github features along the way. I've been following Egghead courses on React and other technologies to solidify a lot of 'on the job' experience into something a little more complete. At a product company, it can takes years to realize you're behind the curve. As a consultant, I've effectively had 4 jobs/projects at 3 large international companies. That along with semiannual bench time to spend on education enabled me to update my skills faster than before.
 
 ---------------------------------------------------------------------------
 ## CRA Readme
