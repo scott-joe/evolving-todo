@@ -1,3 +1,4 @@
+![Node.js CI](https://github.com/scott-joe/evolving-todo/workflows/Node.js%20CI/badge.svg?branch=master)
 # Evolving ToDo App
 Wanted to try out React Hooks with something from 'the ground up' with CRA and trying out the newer Github features along the way.
 
