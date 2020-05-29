@@ -1,3 +1,9 @@
+# Evolving ToDo App
+Wanted to try out React Hooks with something from 'the ground up' with CRA and trying out the newer Github features along the way.
+
+---------------------------------------------------------------------------
+# CRA Readme
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
