@@ -33,7 +33,7 @@ I wanted to try out React Hooks with something from 'the ground up' with CRA and
 - [ ] Selenium (?)
 
 ### Persistence
-- [ ] LocalStorage
+- [x] LocalStorage
 - [ ] MongoDB
 - [ ] MySQL
 - [ ] Postgres
